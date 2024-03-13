@@ -39,7 +39,7 @@ nav ul li a:hover {
 img.logo {
     height: 150px;
     border: solid rgba(0, 0, 0, 0);
-    mask-image: url(/docs/web/img/V&S\ logo_circle.png);
+    mask-image: url(../web/img/V&S/logo_circle.png);
     mask-position: center;
     mask-size: 150px;
     animation: logo-off 1s both ;
