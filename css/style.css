@@ -1,3 +1,36 @@
-.ER {
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.vt323-regular {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+section {
     display: none;
+}
+
+.normal {
+    display: block;
+}
+
+.map {
+    font-family: "vt323";
+    color: rgb(0, 255, 0);
+}
+
+#clickable:hover{
+    color: red;
+}
+
+.map p, a {
+    display: inline-block;
+    text-align: left;
+}
+
+.map iframe {
+    width: 90%;
+    height: 700px;
+    filter: blur(20px);
 }
