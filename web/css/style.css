@@ -49,13 +49,14 @@ img.logo:hover {
     animation: logo-on 1s both;
 }
 
-video {
-    height: 250px;
+iframe {
+    height: 300px;
+    width: 533px;
     border: solid rgba(0, 0, 0, 0);
     animation: border-off 0.5s both;
 }
 
-video:hover {
+iframe:hover {
     animation: border-on 0.5s both;
 }
 
