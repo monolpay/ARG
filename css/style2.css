@@ -1,0 +1,28 @@
+html {
+    background-color: black;
+    font-family: "vt323";
+    color: rgb(0, 255, 0);
+}
+
+h1 {
+    font-size: 50rem;
+    padding: 0px;
+    margin: 0px;
+}
+
+p{
+    text-decoration: none;
+    color: black;
+}
+
+p:hover{
+    animation: footer 15s both;
+}
+
+@keyframes footer {
+    from{color: black;}
+    25%{color: rgba(0, 255, 0, 0.2)}
+    75%{color: rgba(0, 255, 0, 1)}
+    90%{color: rgba(255, 255, 0, 1)}
+    100%{color: red}
+}

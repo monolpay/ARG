@@ -42,12 +42,12 @@ Děkuji za pochopení
         <p>P2O7M4O9C8 6M2I7</p>
         <p>P4O9M8O6C2 7M4I9</p>
         <p>P8O6M2O7C4 9M8I6</p>
-        <p  id="clickable" onclick="document.getElementsByTagName('iframe')[0].style='filter: blur(0px);'">P2O7M4O9C8 6M2I7</p>
+        <p  id="clickable" onclick="reveal(1)">P2O7M4O9C8 6M2I7</p>
         <p>P4O9M8O6C2 7M4I9</p>
         <p>P8O6M2O7C4 9M8I6</p>
         <!-- <h2>Vrať se, až to bude třeba</h2> -->
         <!-- <iframe style="border:none" src="https://frame.mapy.cz/s/bufujaneru" frameborder="0"></iframe> -->
-        <video src="../Apollo_ Missions to the Moon – Trailer _ National Geographic.mp4" autoplay controls></video>
+        <video src="../Apollo_ Missions to the Moon – Trailer _ National Geographic.mp4" controls id="trailer"></video>
         <h2 id="timer"></h2>
     </section>
     <section class="vas">
@@ -60,9 +60,36 @@ Děkuji za pochopení
     </section>
 
     <script>
+        let eligible = 0
+        function secret(){
+            document.getElementById("timer").style.display="none"
+            eligible = 1
+        }
+
+        function reveal(reveal){
+           if(reveal == 1 && eligible == 1){
+            a = confirm("Jseš připraven/a?")
+            console.log("revealed")
+           }
+           
+           if(a == true){
+            b = confirm("Opravdu to myslíš vážně?")
+            if(b == true){
+                c = confirm("TYTO ZÁBĚRY JSOU PŘÍSNĚ TAJNÉ!!")
+                window.open("supersecret.html", "_top")
+            }
+            else{
+                alert("Já si to myslel")
+            }
+           }
+           else {
+            alert("Přijď později")
+           }
+        }
 
         // <a href="https://www.squash.io/how-to-set-time-delay-in-javascript/">Set the target date and time</a> for the countdown
 const targetDate = new Date("March 31, 2024 21:13:13");
+// const targetDate = new Date("March 30, 2024 00:13:13");
 
 // Get the current date and time
 const currentDate = new Date();
@@ -91,7 +118,24 @@ function updateCountdown() {
     console.log("Countdown has ended");
     clearInterval(intervalId);
   }
+
+  let tHeight = 800 / 24 * hours
+  let fHeight = 800 * (24 - hours)
+  if(hours <= 24){
+    document.getElementById("trailer").style="height: "+tHeight+"px"
+    document.getElementById("timer").style="font-size: "+tHeight+"px"
 }
+
+if(hours <= 5){
+    document.getElementById("trailer").style.display="none"
+}
+
+if(hours <= 0 && minutes <= 0 && seconds <= 0){
+    document.getElementById("timer").style.display="none"
+    secret()
+}
+}
+
 
 // Call the updateCountdown function every second
 const intervalId = setInterval(updateCountdown, 1000);
