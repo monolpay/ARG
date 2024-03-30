@@ -62,7 +62,7 @@ Děkuji za pochopení
     <script>
         let eligible = 0
         function secret(){
-            document.getElementById("timer").style.display="none"
+            // document.getElementById("timer").style.display="none"
             eligible = 1
         }
 
@@ -108,7 +108,9 @@ function updateCountdown() {
   let seconds = Math.floor(totalSeconds % 60);
 
   // Display the countdown timer
+  if(hours > 0 && minutes > 0 && seconds > 0){
   document.getElementById("timer").textContent=(`T- ${hours}:${minutes}:${seconds}`);
+  }
 
   // Decrease the totalSeconds by 1
   totalSeconds--;
@@ -120,10 +122,10 @@ function updateCountdown() {
   }
 
   let tHeight = 800 / 24 * hours
-  let fHeight = 800 * (24 - hours)
-  if(hours <= 24){
+  let fHeight = 10 * (24 - hours)
+  if(hours <= 24 && hours > 0){
     document.getElementById("trailer").style="height: "+tHeight+"px"
-    document.getElementById("timer").style="font-size: "+tHeight+"px"
+    document.getElementById("timer").style="font-size: "+fHeight+"px"
 }
 
 if(hours <= 5){
@@ -131,8 +133,8 @@ if(hours <= 5){
 }
 
 if(hours <= 0 && minutes <= 0 && seconds <= 0){
-    document.getElementById("timer").style.display="none"
-    document.getElementById("timer").textContent=("Liftoff");
+    document.getElementById("timer").textContent=(`Liftoff`);
+    document.getElementById("timer").style="font-size: 120px"
     secret()
 }
 }
